@@ -1,0 +1,768 @@
+Archive member included because of file (symbol)
+
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+                              stk500boot.o (__divmodhi4)
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+                              stk500boot.o (__udivmodsi4)
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+                              /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o (exit)
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+                              stk500boot.o (__do_copy_data)
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+                              stk500boot.o (__do_clear_bss)
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+                              /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o) (__udivmodhi4)
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega256rfr2.o)
+                              stk500boot.o (__eerd_byte_m256rfr2)
+/home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega256rfr2.o)
+                              stk500boot.o (__eewr_byte_m256rfr2)
+
+Allocating common symbols
+Common symbol       size              file
+
+gEepromIndex        0x4               stk500boot.o
+gFlashIndex         0x4               stk500boot.o
+gRamIndex           0x4               stk500boot.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00100000         xr
+data             0x00800200         0x0000fe00         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800200
+LOAD /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+LOAD stk500boot.o
+LOAD /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libm.a
+Address of section .text set to 0x3e000
+LOAD /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a
+LOAD /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a
+LOAD /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0003e000     0x182e
+ *(.vectors)
+ .vectors       0x0003e000      0x134 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+                0x0003e000                __vectors
+                0x0003e000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x0003e134      0x231 stk500boot.o
+                0x0003e134                gTextMsg_END
+                0x0003e136                gTextMsg_HELP_MSG_Y
+                0x0003e143                gTextMsg_HELP_MSG_V
+                0x0003e15c                gTextMsg_HELP_MSG_R
+                0x0003e167                gTextMsg_HELP_MSG_Q
+                0x0003e16e                gTextMsg_HELP_MSG_L
+                0x0003e17f                gTextMsg_HELP_MSG_H
+                0x0003e186                gTextMsg_HELP_MSG_F
+                0x0003e193                gTextMsg_HELP_MSG_E
+                0x0003e1a1                gTextMsg_HELP_MSG_B
+                0x0003e1ad                gTextMsg_HELP_MSG_AT
+                0x0003e1bb                gTextMsg_HELP_MSG_QM
+                0x0003e1c7                gTextMsg_HELP_MSG_0
+                0x0003e1d3                gTextMsg_PORT
+                0x0003e1d8                gTextMsg_EEPROMerrorCnt
+                0x0003e1e4                gTextMsg_ReadingEEprom
+                0x0003e1ef                gTextMsg_WriteToEEprom
+                0x0003e1fb                gTextMsg_SPACE
+                0x0003e1fd                gTextMsg_MustBeLetter
+                0x0003e20e                gTextMsg_PortNotSupported
+                0x0003e221                gTextMsg_WHAT_PORT
+                0x0003e22c                gTextMsg_jmp
+                0x0003e231                gTextMsg_rjmp
+                0x0003e238                gTextMsg_noVector
+                0x0003e242                gTextMsg_VECTOR_HEADER
+                0x0003e277                gTextMsg_GCC_VERSION_STR
+                0x0003e27d                gTextMsg_AVR_LIBC_VER_STR
+                0x0003e283                gTextMsg_GCC_DATE_STR
+                0x0003e28f                gTextMsg_FUSE_BYTE_LOCK
+                0x0003e29e                gTextMsg_FUSE_BYTE_EXT
+                0x0003e2ad                gTextMsg_FUSE_BYTE_HIGH
+                0x0003e2bc                gTextMsg_FUSE_BYTE_LOW
+                0x0003e2cb                gTextMsg_CPU_SIGNATURE
+                0x0003e2da                gTextMsg_GCC_VERSION
+                0x0003e2e9                gTextMsg_AVR_LIBC
+                0x0003e2f8                gTextMsg_AVR_ARCH
+                0x0003e307                gTextMsg_CPU_Type
+                0x0003e316                gTextMsg_COMPILED_ON
+                0x0003e325                gTextMsg_HUH
+                0x0003e32a                gTextMsg_Prompt
+                0x0003e336                gTextMsg_Explorer
+                0x0003e357                gTextMsg_CPU_Name
+                0x0003e366                . = ALIGN (0x2)
+ *fill*         0x0003e365        0x1 
+                0x0003e366                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0003e366        0x0 linker stubs
+ *(.trampolines*)
+                0x0003e366                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0003e366                __ctors_start = .
+ *(.ctors)
+                0x0003e366                __ctors_end = .
+                0x0003e366                __dtors_start = .
+ *(.dtors)
+                0x0003e366                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0003e366        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+                0x0003e366                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0003e366       0x10 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0003e376       0x1a /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+                0x0003e376                __do_copy_data
+ .init4         0x0003e390       0x10 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+                0x0003e390                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0003e3a0        0x8 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+ .init9         0x0003e3a8       0x10 stk500boot.o
+                0x0003e3a8                __jumpMain
+ *(.init9)
+ *(.text)
+ .text          0x0003e3b8        0x4 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+                0x0003e3b8                __vector_38
+                0x0003e3b8                __vector_22
+                0x0003e3b8                __vector_63
+                0x0003e3b8                __vector_28
+                0x0003e3b8                __vector_67
+                0x0003e3b8                __vector_1
+                0x0003e3b8                __vector_32
+                0x0003e3b8                __vector_75
+                0x0003e3b8                __vector_71
+                0x0003e3b8                __vector_34
+                0x0003e3b8                __vector_62
+                0x0003e3b8                __vector_24
+                0x0003e3b8                __vector_12
+                0x0003e3b8                __vector_55
+                0x0003e3b8                __vector_69
+                0x0003e3b8                __vector_46
+                0x0003e3b8                __bad_interrupt
+                0x0003e3b8                __vector_72
+                0x0003e3b8                __vector_6
+                0x0003e3b8                __vector_31
+                0x0003e3b8                __vector_35
+                0x0003e3b8                __vector_74
+                0x0003e3b8                __vector_39
+                0x0003e3b8                __vector_3
+                0x0003e3b8                __vector_23
+                0x0003e3b8                __vector_68
+                0x0003e3b8                __vector_30
+                0x0003e3b8                __vector_73
+                0x0003e3b8                __vector_45
+                0x0003e3b8                __vector_25
+                0x0003e3b8                __vector_61
+                0x0003e3b8                __vector_11
+                0x0003e3b8                __vector_54
+                0x0003e3b8                __vector_13
+                0x0003e3b8                __vector_17
+                0x0003e3b8                __vector_19
+                0x0003e3b8                __vector_56
+                0x0003e3b8                __vector_7
+                0x0003e3b8                __vector_49
+                0x0003e3b8                __vector_41
+                0x0003e3b8                __vector_64
+                0x0003e3b8                __vector_43
+                0x0003e3b8                __vector_27
+                0x0003e3b8                __vector_5
+                0x0003e3b8                __vector_33
+                0x0003e3b8                __vector_76
+                0x0003e3b8                __vector_47
+                0x0003e3b8                __vector_52
+                0x0003e3b8                __vector_37
+                0x0003e3b8                __vector_4
+                0x0003e3b8                __vector_44
+                0x0003e3b8                __vector_51
+                0x0003e3b8                __vector_9
+                0x0003e3b8                __vector_2
+                0x0003e3b8                __vector_21
+                0x0003e3b8                __vector_15
+                0x0003e3b8                __vector_66
+                0x0003e3b8                __vector_36
+                0x0003e3b8                __vector_58
+                0x0003e3b8                __vector_70
+                0x0003e3b8                __vector_29
+                0x0003e3b8                __vector_60
+                0x0003e3b8                __vector_40
+                0x0003e3b8                __vector_8
+                0x0003e3b8                __vector_26
+                0x0003e3b8                __vector_48
+                0x0003e3b8                __vector_14
+                0x0003e3b8                __vector_57
+                0x0003e3b8                __vector_53
+                0x0003e3b8                __vector_10
+                0x0003e3b8                __vector_50
+                0x0003e3b8                __vector_16
+                0x0003e3b8                __vector_59
+                0x0003e3b8                __vector_18
+                0x0003e3b8                __vector_20
+                0x0003e3b8                __vector_42
+                0x0003e3b8                __vector_65
+ .text          0x0003e3bc      0x11c stk500boot.o
+                0x0003e3d4                delay_ms
+                0x0003e3f2                PrintFromPROGMEM
+                0x0003e41a                PrintNewLine
+                0x0003e426                PrintFromPROGMEMln
+                0x0003e42e                PrintString
+                0x0003e446                PrintHexByte
+                0x0003e470                PrintDecInt
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega256rfr2.o)
+ .text          0x0003e4d8        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega256rfr2.o)
+                0x0003e4d8                . = ALIGN (0x2)
+ *(.text.*)
+ .text.unlikely
+                0x0003e4d8      0x196 stk500boot.o
+ .text.startup  0x0003e66e     0x10fc stk500boot.o
+                0x0003e66e                main
+ .text.libgcc.mul
+                0x0003f76a        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .text.libgcc.div
+                0x0003f76a       0x28 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+                0x0003f76a                __divmodhi4
+                0x0003f76a                _div
+ .text.libgcc   0x0003f792        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .text.libgcc.prologue
+                0x0003f792        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .text.libgcc.builtins
+                0x0003f792        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .text.libgcc.fmul
+                0x0003f792        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .text.libgcc.mul
+                0x0003f792        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.div
+                0x0003f792       0x44 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+                0x0003f792                __udivmodsi4
+ .text.libgcc   0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .text.libgcc   0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x0003f7d6        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.div
+                0x0003f7d6       0x28 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+                0x0003f7d6                __udivmodhi4
+ .text.libgcc   0x0003f7fe        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x0003f7fe        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x0003f7fe        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x0003f7fe        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .text.avr-libc
+                0x0003f7fe       0x10 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega256rfr2.o)
+                0x0003f7fe                __eerd_byte_m256rfr2
+ .text.avr-libc
+                0x0003f80e       0x1c /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega256rfr2.o)
+                0x0003f80e                __eewr_byte_m256rfr2
+                0x0003f810                __eewr_r18_m256rfr2
+                0x0003f82a                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0003f82a        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+                0x0003f82a                exit
+                0x0003f82a                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0003f82a        0x4 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ *(.fini0)
+                0x0003f82e                _etext = .
+
+.data           0x00800200        0x4 load address 0x0003f82e
+                0x00800200                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+ .data          0x00800200        0x0 stk500boot.o
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega256rfr2.o)
+ .data          0x00800200        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega256rfr2.o)
+ *(.data*)
+ *(.rodata)
+ .rodata        0x00800200        0x3 stk500boot.o
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800204                . = ALIGN (0x2)
+ *fill*         0x00800203        0x1 
+                0x00800204                _edata = .
+                0x00800204                PROVIDE (__data_end, .)
+
+.bss            0x00800204        0xe
+                0x00800204                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800204        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+ .bss           0x00800204        0x2 stk500boot.o
+                0x00800204                app_start
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega256rfr2.o)
+ .bss           0x00800206        0x0 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega256rfr2.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800206        0xc stk500boot.o
+                0x00800206                gEepromIndex
+                0x0080020a                gFlashIndex
+                0x0080020e                gRamIndex
+                0x00800212                PROVIDE (__bss_end, .)
+                0x0003f82e                __data_load_start = LOADADDR (.data)
+                0x0003f832                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800212        0x0
+                0x00800212                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800212                PROVIDE (__noinit_end, .)
+                0x00800212                _end = .
+                0x00800212                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab           0x00000000      0x6e4
+ *(.stab)
+ .stab          0x00000000      0x6e4 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+
+.stabstr        0x00000000       0x97
+ *(.stabstr)
+ .stabstr       0x00000000       0x97 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x2f
+ *(.comment)
+ .comment       0x00000000       0x2f stk500boot.o
+                                 0x30 (size before relaxing)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x48
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x48 stk500boot.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x2535
+ *(.debug_info)
+ .debug_info    0x00000000     0x2535 stk500boot.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x395
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x395 stk500boot.o
+
+.debug_line     0x00000000      0x628
+ *(.debug_line)
+ .debug_line    0x00000000      0x628 stk500boot.o
+
+.debug_frame    0x00000000      0x194
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x194 stk500boot.o
+
+.debug_str      0x00000000      0x83f
+ *(.debug_str)
+ .debug_str     0x00000000      0x83f stk500boot.o
+                                0x889 (size before relaxing)
+
+.debug_loc      0x00000000     0x171b
+ *(.debug_loc)
+ .debug_loc     0x00000000     0x171b stk500boot.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x1c0
+ *(.debug_ranges)
+ .debug_ranges  0x00000000      0x1c0 stk500boot.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(stk500boot.elf elf32-avr)
+LOAD linker stubs
+
+Cross Reference Table
+
+Symbol                                            File
+PrintDecInt                                       stk500boot.o
+PrintFromPROGMEM                                  stk500boot.o
+PrintFromPROGMEMln                                stk500boot.o
+PrintHexByte                                      stk500boot.o
+PrintNewLine                                      stk500boot.o
+PrintString                                       stk500boot.o
+__bad_interrupt                                   /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__bss_end                                         /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+__bss_start                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+__data_end                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+__data_load_start                                 /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+__data_start                                      /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+__divmodhi4                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+                                                  stk500boot.o
+__do_clear_bss                                    /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_clear_bss.o)
+                                                  stk500boot.o
+__do_copy_data                                    /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_copy_data.o)
+                                                  stk500boot.o
+__eerd_byte_m256rfr2                              /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eerd_byte_atmega256rfr2.o)
+                                                  stk500boot.o
+__eewr_byte_m256rfr2                              /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega256rfr2.o)
+                                                  stk500boot.o
+__eewr_r18_m256rfr2                               /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/libc.a(eewr_byte_atmega256rfr2.o)
+__heap_end                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__init                                            /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__jumpMain                                        stk500boot.o
+__stack                                           /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__udivmodhi4                                      /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodhi4.o)
+                                                  /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+__udivmodsi4                                      /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_udivmodsi4.o)
+                                                  stk500boot.o
+__vector_1                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_10                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_11                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_12                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_13                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_14                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_15                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_16                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_17                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_18                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_19                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_2                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_20                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_21                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_22                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_23                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_24                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_25                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_26                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_27                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_28                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_29                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_3                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_30                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_31                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_32                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_33                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_34                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_35                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_36                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_37                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_38                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_39                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_4                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_40                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_41                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_42                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_43                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_44                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_45                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_46                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_47                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_48                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_49                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_5                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_50                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_51                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_52                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_53                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_54                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_55                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_56                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_57                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_58                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_59                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_6                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_60                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_61                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_62                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_63                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_64                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_65                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_66                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_67                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_68                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_69                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_7                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_70                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_71                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_72                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_73                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_74                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_75                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_76                                       /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_8                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_9                                        /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vector_default                                  /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+__vectors                                         /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+_div                                              /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_divmodhi4.o)
+_exit                                             /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+app_start                                         stk500boot.o
+delay_ms                                          stk500boot.o
+exit                                              /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/avr6/libgcc.a(_exit.o)
+                                                  /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
+gEepromIndex                                      stk500boot.o
+gFlashIndex                                       stk500boot.o
+gRamIndex                                         stk500boot.o
+gTextMsg_AVR_ARCH                                 stk500boot.o
+gTextMsg_AVR_LIBC                                 stk500boot.o
+gTextMsg_AVR_LIBC_VER_STR                         stk500boot.o
+gTextMsg_COMPILED_ON                              stk500boot.o
+gTextMsg_CPU_Name                                 stk500boot.o
+gTextMsg_CPU_SIGNATURE                            stk500boot.o
+gTextMsg_CPU_Type                                 stk500boot.o
+gTextMsg_EEPROMerrorCnt                           stk500boot.o
+gTextMsg_END                                      stk500boot.o
+gTextMsg_Explorer                                 stk500boot.o
+gTextMsg_FUSE_BYTE_EXT                            stk500boot.o
+gTextMsg_FUSE_BYTE_HIGH                           stk500boot.o
+gTextMsg_FUSE_BYTE_LOCK                           stk500boot.o
+gTextMsg_FUSE_BYTE_LOW                            stk500boot.o
+gTextMsg_GCC_DATE_STR                             stk500boot.o
+gTextMsg_GCC_VERSION                              stk500boot.o
+gTextMsg_GCC_VERSION_STR                          stk500boot.o
+gTextMsg_HELP_MSG_0                               stk500boot.o
+gTextMsg_HELP_MSG_AT                              stk500boot.o
+gTextMsg_HELP_MSG_B                               stk500boot.o
+gTextMsg_HELP_MSG_E                               stk500boot.o
+gTextMsg_HELP_MSG_F                               stk500boot.o
+gTextMsg_HELP_MSG_H                               stk500boot.o
+gTextMsg_HELP_MSG_L                               stk500boot.o
+gTextMsg_HELP_MSG_Q                               stk500boot.o
+gTextMsg_HELP_MSG_QM                              stk500boot.o
+gTextMsg_HELP_MSG_R                               stk500boot.o
+gTextMsg_HELP_MSG_V                               stk500boot.o
+gTextMsg_HELP_MSG_Y                               stk500boot.o
+gTextMsg_HUH                                      stk500boot.o
+gTextMsg_MustBeLetter                             stk500boot.o
+gTextMsg_PORT                                     stk500boot.o
+gTextMsg_PortNotSupported                         stk500boot.o
+gTextMsg_Prompt                                   stk500boot.o
+gTextMsg_ReadingEEprom                            stk500boot.o
+gTextMsg_SPACE                                    stk500boot.o
+gTextMsg_VECTOR_HEADER                            stk500boot.o
+gTextMsg_WHAT_PORT                                stk500boot.o
+gTextMsg_WriteToEEprom                            stk500boot.o
+gTextMsg_jmp                                      stk500boot.o
+gTextMsg_noVector                                 stk500boot.o
+gTextMsg_rjmp                                     stk500boot.o
+main                                              stk500boot.o
+                                                  /home/netbook/avr8-gnu-toolchain-linux_x86/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr6/crtm256rfr2.o
