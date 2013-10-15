@@ -218,9 +218,9 @@ LICENSE:
 	#define PROGLED_DDR		DDRB
 	#define PROGLED_PIN		PINB7
 #elif defined( _BOARD_MESHTHING_2564RFR2_ )
-	#define PROGLED_PORT	PORTD
-	#define PROGLED_DDR		DDRD
-	#define PROGLED_PIN		PIND0
+	#define PROGLED_PORT	PORTB
+	#define PROGLED_DDR		DDRB
+	#define PROGLED_PIN		PINB1
 #else
 	#define PROGLED_PORT	PORTG
 	#define PROGLED_DDR		DDRG
@@ -723,8 +723,11 @@ int main(void)
 		#ifdef BLINK_LED_WHILE_WAITING
 			if ((boot_timer % _BLINK_LOOP_COUNT_) == 0)
 			{
-				//*	toggle the LED
+	
+#ifdef _DEBUG_SERIAL_
 				sendchar('b');
+#endif
+			//*	toggle the LED
 				PROGLED_PORT	^=	(1<<PROGLED_PIN);	// turn LED ON
 			}
 		#endif

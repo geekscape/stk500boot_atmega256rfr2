@@ -36,14 +36,14 @@
 
 # MCU name
 #MCU = atmega128
-
+MCU = atmega256rfr2
 
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the 
 #     processor frequency. You can then use this symbol in your source code to 
 #     calculate timings. Do NOT tack on a 'UL' at the end, this will be done
 #     automatically to create a 32-bit value in your source code.
-#F_CPU = 16000000
+F_CPU = 16000000
 
 
 # Bootloader
@@ -209,12 +209,16 @@ LDFLAGS += -Wl,--section-start=.text=$(BOOTLOADER_ADDRESS)
 # Type: avrdude -c ?
 # to get a full listing.
 #
-AVRDUDE_PROGRAMMER = stk500v2
+AVRDUDE_PROGRAMMER = usbasp
+#AVRDUDE_PROGRAMMER = stk500
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
-AVRDUDE_PORT = com1    # programmer connected to serial device
+AVRDUDE_PORT = usb    # programmer connected to serial device
+#AVRDUDE_PORT = /dev/tty.usbmodemfd141    # programmer connected to serial device
 
-AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
+#AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
+AVRDUDE_WRITE_FLASH = -U flash:w:stk500boot_v2_m256rfr2.hex:i
+
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
 
 
@@ -398,11 +402,12 @@ penguino: begin gccversion sizebefore build sizeafter end
 #	Jul 17, 2013 	<RDP> Adding atmega256rfr2 support
 #BOOTLOADER_ADDRESS = 3E000 =1F000 x 2 -- BootSZ Fuse Bits = 00 4096 Words/32Pages
 #x2 because we're addressing in bytes, not words.
-meshthing: MCU = atmega2564rfr2
+meshthing: MCU = atmega256rfr2
 meshthing: F_CPU = 16000000
 meshthing: BOOTLOADER_ADDRESS = 3E000 
-
-meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -DBAUDRATE=38400 -D_DEBUG_SERIAL_
+#meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -DBAUDRATE=38400 -D_DEBUG_SERIAL_
+meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -DBAUDRATE=57600 -D_DEBUG_SERIAL_
+#meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -D_DEBUG_SERIAL_
 meshthing: begin gccversion sizebefore build sizeafter end 
 			mv $(TARGET).hex stk500boot_v2_m256rfr2.hex
 
@@ -454,7 +459,7 @@ gccversion :
 
 
 # Program the device.  
-program: $(TARGET).hex $(TARGET).eep
+flash: $(TARGET).hex $(TARGET).eep
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
 
 

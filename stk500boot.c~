@@ -404,6 +404,7 @@ LICENSE:
 /*
  * Macro to calculate UBBR from XTAL and baudrate
  */
+
 #if defined(_BOARD_MESHTHING_2564RFR2_)
 	#define UART_BAUD_SELECT(baudRate,xtalCpu) (xtalCpu / 16 / baudRate - 1)
 #elif defined(__AVR_ATmega32__) && UART_BAUDRATE_DOUBLE_SPEED
@@ -644,20 +645,51 @@ int main(void)
 #if UART_BAUDRATE_DOUBLE_SPEED
 	UART_STATUS_REG		|=	(1 <<UART_DOUBLE_SPEED);
 #endif
+	UART_BAUD_RATE_LOW	=	UART_BAUD_SELECT(BAUDRATE,F_CPU);
+	UART_CONTROL_REG	=	(1 << UART_ENABLE_RECEIVER) | (1 << UART_ENABLE_TRANSMITTER);
 
 #if defined(_BOARD_MESHTHING_2564RFR2_)
+/*
 	UCSR1A &= ~(1 << U2X1);
 	UART_CONTROL_REG  |=	(1 << UART_ENABLE_RECEIVER) | (1 << UART_ENABLE_TRANSMITTER);
 	UBRR1H = (UART_BAUD_SELECT(BAUDRATE,F_CPU)>>8);
 	UART_BAUD_RATE_LOW	=	UART_BAUD_SELECT(BAUDRATE,F_CPU);
 
-	UCSR1C |= (0 << USBS1) | (1 << UCSZ10) | (1 << UCSZ11);
-	
-#else
+	UCSR1C |= (0 << USBS1) | (1 << UCSZ10) | (1 << UCSZ11);	
+*/
 
-	UART_BAUD_RATE_LOW	=	UART_BAUD_SELECT(BAUDRATE,F_CPU);
-	UART_CONTROL_REG	=	(1 << UART_ENABLE_RECEIVER) | (1 << UART_ENABLE_TRANSMITTER);
+	#  define UCSRA UCSR1A
+	#  define UDRE  UDRE1
+	#  define UCSRB UCSR1B
+	#  define RXEN  RXEN1
+	#  define TXEN  TXEN1
+	#  define UCSRC UCSR1C
+
+	#  define UBRR UBRR1L
+	#  define UDR UDR1
+
+	#define BAUDRATE 115200
+//	#define BAUD_PRESCALE (F_CPU / 16 / BAUDRATE -1)   
+
+//trying double speed as it has less error at 115200...
+	#define BAUD_PRESCALE (F_CPU / 8 / BAUDRATE -1)   
+	UCSRA |= 1 << U2X1;	
+
+	// Clear double speed operation
+	//UCSRA &= ~(1 << U2X1);
+
+	// Enable TX and RX circuitry
+  	UCSRB |= (1 << RXEN) | (1 << TXEN);
+
+	// 8-bit data, 1 stop bit
+  	UCSRC |= (0 << USBS1) | (1 << UCSZ10) | (1 << UCSZ11);
+
+	// Initialize baud rate
+  	UBRR1H = (BAUD_PRESCALE >> 8);
+  	UBRR1L =  BAUD_PRESCALE;
+
 #endif
+
 
 	asm volatile ("nop");			// wait until port has changed
 
@@ -682,7 +714,6 @@ int main(void)
 	{
 		while ((!(Serial_Available())) && (boot_state == 0))		// wait for data
 		{
-
 			_delay_ms(0.001);
 			boot_timer++;
 			if (boot_timer > boot_timeout)
@@ -693,7 +724,7 @@ int main(void)
 			if ((boot_timer % _BLINK_LOOP_COUNT_) == 0)
 			{
 				//*	toggle the LED
-				sendchar('0');
+				//sendchar('b');
 				PROGLED_PORT	^=	(1<<PROGLED_PIN);	// turn LED ON
 			}
 		#endif
@@ -705,7 +736,7 @@ int main(void)
 	if (boot_state==1)
 	{
 		//*	main loop
-		sendchar('1');
+//		sendchar('m');
 		while (!isLeave)
 		{
 			/*
@@ -714,6 +745,7 @@ int main(void)
 			msgParseState	=	ST_START;
 			while ( msgParseState != ST_PROCESS )
 			{
+//				sendchar('w');
 				if (boot_state==1)
 				{
 					boot_state	=	0;
@@ -752,12 +784,14 @@ int main(void)
 					case ST_START:
 						if ( c == MESSAGE_START )
 						{
+//								sendchar('0');
 							msgParseState	=	ST_GET_SEQ_NUM;
 							checksum		=	MESSAGE_START^0;
 						}
 						break;
 
 					case ST_GET_SEQ_NUM:
+//								sendchar('1');
 					#ifdef _FIX_ISSUE_505_
 						seqNum			=	c;
 						msgParseState	=	ST_MSG_SIZE_1;

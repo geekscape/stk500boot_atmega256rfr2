@@ -202,7 +202,7 @@ Disassembly of section .text:
    3e27d:	31 2e 38 2e 30 00                                   1.8.0.
 
 0003e283 <gTextMsg_GCC_DATE_STR>:
-   3e283:	53 65 70 20 20 37 20 32 30 31 33 00                 Sep  7 2013.
+   3e283:	4f 63 74 20 20 31 20 32 30 31 33 00                 Oct  1 2013.
 
 0003e28f <gTextMsg_FUSE_BYTE_LOCK>:
    3e28f:	4c 6f 63 6b 20 66 75 73 65 20 20 20 3d 20 00        Lock fuse   = .
@@ -1002,10 +1002,10 @@ int main(void)
 #ifndef REMOVE_BOOTLOADER_LED
 	/* PROG_PIN pulled low, indicate with LED that bootloader is active */
 	PROGLED_DDR		|=	(1<<PROGLED_PIN);
-   3e6b2:	50 9a       	sbi	0x0a, 0	; 10
+   3e6b2:	21 9a       	sbi	0x04, 1	; 4
 //	PROGLED_PORT	&=	~(1<<PROGLED_PIN);	// active low LED ON
 	PROGLED_PORT	|=	(1<<PROGLED_PIN);	// active high LED ON
-   3e6b4:	58 9a       	sbi	0x0b, 0	; 11
+   3e6b4:	29 9a       	sbi	0x05, 1	; 5
 	/*
 	 * Init UART
 	 * set baudrate and enable USART receiver and transmiter without interrupts
@@ -1017,7 +1017,7 @@ int main(void)
    3e6bc:	80 93 c8 00 	sts	0x00C8, r24
 #endif
 	UART_BAUD_RATE_LOW	=	UART_BAUD_SELECT(BAUDRATE,F_CPU);
-   3e6c0:	87 e0       	ldi	r24, 0x07	; 7
+   3e6c0:	87 e6       	ldi	r24, 0x67	; 103
    3e6c2:	80 93 cc 00 	sts	0x00CC, r24
 	UART_CONTROL_REG	=	(1 << UART_ENABLE_RECEIVER) | (1 << UART_ENABLE_TRANSMITTER);
    3e6c6:	88 e1       	ldi	r24, 0x18	; 24
@@ -1113,12 +1113,14 @@ int main(void)
    3e734:	92 2e       	mov	r9, r18
    3e736:	a1 2c       	mov	r10, r1
    3e738:	b1 2c       	mov	r11, r1
-			{
-				//*	toggle the LED
+	
+#ifdef _DEBUG_SERIAL_
 				sendchar('b');
+#endif
+			//*	toggle the LED
 				PROGLED_PORT	^=	(1<<PROGLED_PIN);	// turn LED ON
-   3e73a:	77 24       	eor	r7, r7
-   3e73c:	73 94       	inc	r7
+   3e73a:	32 e0       	ldi	r19, 0x02	; 2
+   3e73c:	73 2e       	mov	r7, r19
    3e73e:	30 c0       	rjmp	.+96     	; 0x3e7a0 <main+0x132>
    3e740:	25 e0       	ldi	r18, 0x05	; 5
    3e742:	2a 95       	dec	r18
@@ -1163,14 +1165,17 @@ int main(void)
    3e77a:	69 2b       	or	r22, r25
    3e77c:	31 f4       	brne	.+12     	; 0x3e78a <main+0x11c>
 			{
-				//*	toggle the LED
+	
+#ifdef _DEBUG_SERIAL_
 				sendchar('b');
    3e77e:	82 e6       	ldi	r24, 0x62	; 98
    3e780:	0f 94 de f1 	call	0x3e3bc	; 0x3e3bc <sendchar>
+#endif
+			//*	toggle the LED
 				PROGLED_PORT	^=	(1<<PROGLED_PIN);	// turn LED ON
-   3e784:	8b b1       	in	r24, 0x0b	; 11
+   3e784:	85 b1       	in	r24, 0x05	; 5
    3e786:	87 25       	eor	r24, r7
-   3e788:	8b b9       	out	0x0b, r24	; 11
+   3e788:	85 b9       	out	0x05, r24	; 5
 
 
 //************************************************************************
@@ -1189,7 +1194,7 @@ static int	Serial_Available(void)
    3e792:	01 15       	cp	r16, r1
    3e794:	11 05       	cpc	r17, r1
    3e796:	a1 f2       	breq	.-88     	; 0x3e740 <main+0xd2>
-				sendchar('b');
+			//*	toggle the LED
 				PROGLED_PORT	^=	(1<<PROGLED_PIN);	// turn LED ON
 			}
 		#endif
@@ -1907,21 +1912,21 @@ int main(void)
 static void BlinkLED(void)
 {
 	PROGLED_DDR		|=	(1<<PROGLED_PIN);
-   3eb5a:	50 9a       	sbi	0x0a, 0	; 10
+   3eb5a:	21 9a       	sbi	0x04, 1	; 4
 	PROGLED_PORT	|=	(1<<PROGLED_PIN);	// active high LED ON
-   3eb5c:	58 9a       	sbi	0x0b, 0	; 11
+   3eb5c:	29 9a       	sbi	0x05, 1	; 5
    3eb5e:	0a c0       	rjmp	.+20     	; 0x3eb74 <main+0x506>
 
 	while (!Serial_Available())
 	{
 		PROGLED_PORT	&=	~(1<<PROGLED_PIN);	// turn LED off
-   3eb60:	58 98       	cbi	0x0b, 0	; 11
+   3eb60:	29 98       	cbi	0x05, 1	; 5
 		delay_ms(100);
    3eb62:	84 e6       	ldi	r24, 0x64	; 100
    3eb64:	90 e0       	ldi	r25, 0x00	; 0
    3eb66:	0f 94 ea f1 	call	0x3e3d4	; 0x3e3d4 <delay_ms>
 		PROGLED_PORT	|=	(1<<PROGLED_PIN);	// turn LED on
-   3eb6a:	58 9a       	sbi	0x0b, 0	; 11
+   3eb6a:	29 9a       	sbi	0x05, 1	; 5
 		delay_ms(100);
    3eb6c:	84 e6       	ldi	r24, 0x64	; 100
    3eb6e:	90 e0       	ldi	r25, 0x00	; 0
@@ -4329,10 +4334,10 @@ int main(void)
 		#ifndef REMOVE_BOOTLOADER_LED
 			//*	<MLS>	toggle the LED
 			PROGLED_PORT	^=	(1<<PROGLED_PIN);	// active high LED ON
-   3f6a6:	8b b1       	in	r24, 0x0b	; 11
-   3f6a8:	91 e0       	ldi	r25, 0x01	; 1
+   3f6a6:	85 b1       	in	r24, 0x05	; 5
+   3f6a8:	92 e0       	ldi	r25, 0x02	; 2
    3f6aa:	89 27       	eor	r24, r25
-   3f6ac:	8b b9       	out	0x0b, r24	; 11
+   3f6ac:	85 b9       	out	0x05, r24	; 5
    3f6ae:	40 e0       	ldi	r20, 0x00	; 0
    3f6b0:	50 e0       	ldi	r21, 0x00	; 0
 
@@ -4435,9 +4440,9 @@ int main(void)
 
 #ifndef REMOVE_BOOTLOADER_LED
 	PROGLED_DDR		&=	~(1<<PROGLED_PIN);	// set to default
-   3f72c:	50 98       	cbi	0x0a, 0	; 10
+   3f72c:	21 98       	cbi	0x04, 1	; 4
 	PROGLED_PORT	&=	~(1<<PROGLED_PIN);	// active low LED OFF
-   3f72e:	58 98       	cbi	0x0b, 0	; 11
+   3f72e:	29 98       	cbi	0x05, 1	; 5
 //	PROGLED_PORT	|=	(1<<PROGLED_PIN);	// active high LED OFf
 	delay_ms(100);							// delay after exit
    3f730:	84 e6       	ldi	r24, 0x64	; 100
