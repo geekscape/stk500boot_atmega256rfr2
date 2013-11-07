@@ -406,8 +406,8 @@ meshthing: MCU = atmega256rfr2
 meshthing: F_CPU = 16000000
 meshthing: BOOTLOADER_ADDRESS = 3E000 
 #meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -DBAUDRATE=38400 -D_DEBUG_SERIAL_
-meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -DBAUDRATE=9600 -D_DEBUG_SERIAL_
-#meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -D_DEBUG_SERIAL_
+#meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -DBAUDRATE=9600 -D_DEBUG_SERIAL_
+meshthing: CFLAGS += -D_BOARD_MESHTHING_2564RFR2_ -D_DEBUG_SERIAL_
 meshthing: begin gccversion sizebefore build sizeafter end 
 			mv $(TARGET).hex stk500boot_v2_m256rfr2.hex
 
