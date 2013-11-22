@@ -36,7 +36,10 @@
 
 # MCU name
 #MCU = atmega128
-MCU = atmega256rfr2
+MCU = atmega2564rfr2
+
+#Fuse Settings
+FUSES      = -U hfuse:w:0xd8:m -U lfuse:w:0xef:m
 
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the 
@@ -236,7 +239,7 @@ AVRDUDE_WRITE_FLASH = -U flash:w:stk500boot_v2_m256rfr2.hex:i
 # to submit bug reports.
 #AVRDUDE_VERBOSE = -v -v
 
-AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
+AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) 
 AVRDUDE_FLAGS += $(AVRDUDE_NO_VERIFY)
 AVRDUDE_FLAGS += $(AVRDUDE_VERBOSE)
 AVRDUDE_FLAGS += $(AVRDUDE_ERASE_COUNTER)
@@ -462,7 +465,9 @@ gccversion :
 flash: $(TARGET).hex $(TARGET).eep
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
 
-
+fuse:
+	$(AVRDUDE) $(AVRDUDE_FLAGS) $(FUSES)
+	
 # Generate avr-gdb config/init file which does the following:
 #     define the reset signal, load the target file, connect to target, and set 
 #     a breakpoint at main().
