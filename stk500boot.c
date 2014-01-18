@@ -673,7 +673,7 @@ int main(void)
 
 //trying double speed as it has less error at 115200...
 	#define BAUD_PRESCALE (F_CPU / 8 / BAUDRATE -1)   
-	UCSRA |= 1 << U2X0;	
+	UCSRA |= 1 << U2X1;	
 
 	// Clear double speed operation
 	//UCSRA &= ~(1 << U2X1);
@@ -685,8 +685,8 @@ int main(void)
   	UCSRC |= (0 << USBS1) | (1 << UCSZ10) | (1 << UCSZ11);
 
 	// Initialize baud rate
-  	UBRR0H = (BAUD_PRESCALE >> 8);
-  	UBRR0L =  BAUD_PRESCALE;
+  	UBRR1H = (BAUD_PRESCALE >> 8);
+  	UBRR1L =  BAUD_PRESCALE;
 
 #endif
 
