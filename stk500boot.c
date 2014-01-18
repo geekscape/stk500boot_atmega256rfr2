@@ -320,22 +320,22 @@ LICENSE:
 #endif
 
 #if defined(_BOARD_MESHTHING_2564RFR2_)
-	#define UART_STATUS_REG 		UCSR0A
+	#define UART_STATUS_REG 		UCSR1A
 
-	#define UDRE  UDRE0
+	#define UDRE  UDRE1
 
-	#define UART_CONTROL_REG 		UCSR0B
-	#define UART_ENABLE_RECEIVER  	RXEN0
-	#define UART_ENABLE_TRANSMITTER TXEN0
+	#define UART_CONTROL_REG 		UCSR1B
+	#define UART_ENABLE_RECEIVER  	RXEN1
+	#define UART_ENABLE_TRANSMITTER TXEN1
 
-	#define UCSRC UCSR0C
+	#define UCSRC UCSR1C
 
-	#define UART_BAUD_RATE_LOW 		UBRR0L
-	#define UART_DATA_REG 			UDR0
+	#define UART_BAUD_RATE_LOW 		UBRR1L
+	#define UART_DATA_REG 			UDR1
 
-	#define	UART_TRANSMIT_COMPLETE		TXC0
-	#define	UART_RECEIVE_COMPLETE		RXC0
-	#define	UART_DOUBLE_SPEED		U2X0
+	#define	UART_TRANSMIT_COMPLETE		TXC1
+	#define	UART_RECEIVE_COMPLETE		RXC1
+	#define	UART_DOUBLE_SPEED		U2X1
 
 #elif defined(_BOARD_ROBOTX_) || defined(__AVR_AT90USB1287__) || defined(__AVR_AT90USB1286__)
 	#define	UART_BAUD_RATE_LOW			UBRR1L	//
@@ -658,15 +658,15 @@ int main(void)
 	UCSR1C |= (0 << USBS1) | (1 << UCSZ10) | (1 << UCSZ11);	
 */
 
-	#  define UCSRA UCSR0A
-	#  define UDRE  UDRE0
-	#  define UCSRB UCSR0B
-	#  define RXEN  RXEN0
-	#  define TXEN  TXEN0
-	#  define UCSRC UCSR0C
+	#  define UCSRA UCSR1A
+	#  define UDRE  UDRE1
+	#  define UCSRB UCSR1B
+	#  define RXEN  RXEN1
+	#  define TXEN  TXEN1
+	#  define UCSRC UCSR1C
 
-	#  define UBRR UBRR0L
-	#  define UDR UDR0
+	#  define UBRR UBRR1L
+	#  define UDR UDR1
 
 	#define BAUDRATE 115200
 //	#define BAUD_PRESCALE (F_CPU / 16 / BAUDRATE -1)   
