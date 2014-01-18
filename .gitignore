@@ -16,3 +16,13 @@
 *.exe
 *.out
 *.app
+
+# ignore the product of the build
+*.eep
+*.elf
+*.lss
+*.lst
+*.map
+*.sym
+*.hex
+.dep
